@@ -58,6 +58,18 @@ var appsList = [
 			'%s 1'
 		],
 		get: null
+	},
+	{
+		cmd: 'dconf',
+		set: ['write',
+			'/org/mate/desktop/background/picture-filename',
+			'"%s"'],
+		get: ['read',
+			'/org/mate/desktop/background/picture-filename'
+		],
+		transform: function (imagePath) {
+			return imagePath.trim().slice(1, -1);
+		}
 	}
 ];
 
