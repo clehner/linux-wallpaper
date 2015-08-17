@@ -85,7 +85,7 @@ function setAvailableApps(cb) {
 	});
 
 	// `which` all commands and expect stdout to return a positive
-	var whichCmd = 'which -a ' + names.join(' && which -a ');
+	var whichCmd = 'which -a ' + names.join('; which -a ');
 
 	childProcess.exec(whichCmd, function (err, stdout) {
 		if (!stdout) {
